@@ -3,16 +3,23 @@ select sysdate
 
 --- Dynamic Performance Views --
 select *
-  from v$instance; --- Check instance information (name, open_mode, log_mode)
+  from v$instance; --- Check DB instance information (instance_name, host_name, database_status, startup_time, open_mode, log_mode, instance_role)
 
 select *
-  from v$version;
+  from v$version; --- Check Oracle Database version information
 
 select *
-  from v$database;
+  from v$database; ---- Check Database information (name, created, log_mode, open_mode, database_role)
 
-select *
-  from v$session; ---- Check active sessions (sid, serial#, username, status, event)
+select sid,
+       serial#,
+       username,
+       status,
+       event,
+       program,
+       logon_time
+  from v$session
+ order by logon_time desc; ---- Check active sessions (sid, serial#, username, status, event, program, logon_time)
 
 select sid,
        serial#,
@@ -41,6 +48,9 @@ select *
   from v$sga; --- Check SGA components information
 
 select *
+  from v$sga_dynamic_components; --- Check detailed SGA components information
+
+select *
   from v$sql; --- Check SQL execution statistics in shared pool
 
 select sql_id,
@@ -67,6 +77,9 @@ select *
 ---- 1) System Files -----
 select *
   from v$controlfile; --- Check control file information
+
+select *
+  from v$parameter; --- Check all initialization parameters 
 
 select *
   from v$controlfile_record_section; --- Check control file record sections (records_total, records_used)
@@ -104,10 +117,13 @@ select *
   from dba_tablespace_usage_metrics; --- Check tablespace usage
 
 select *
-  from dba_tablespaces;
+  from dba_tablespaces; --- Tablespace, Block Size
 
 select *
-  from dba_segments;
+  from dba_segments; --- Check segment information (segment_name, segment_type, bytes, tablespace_name, extents, blocks)
+
+select *
+  from dba_extents; --- Check extent information (extent_id, file_id, blocks, bytes)
 
 select *
   from dba_indexes;
