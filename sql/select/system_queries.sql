@@ -99,6 +99,8 @@ select *
 select *
   from v$backup; --- Check backup information
 
+select * from v$block_change_tracking; ---- Check BCT files information
+
 ----- 2) Data Files ----
 ----- Physical Components ----
 select *
