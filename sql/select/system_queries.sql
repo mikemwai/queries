@@ -74,6 +74,8 @@ select *
  order by name; --- Check background processes information
 
 ----- Database Components ----
+select * from dba_registry ---- View the db options installed
+  
 ---- 1) System Files -----
 select *
   from v$controlfile; --- Check control file information
