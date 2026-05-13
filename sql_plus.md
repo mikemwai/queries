@@ -57,15 +57,18 @@
 
 - Save output of sql statements into external files:
 ```sh
-  spool filename.log
+  spool query_output.log
   /
   spool off // Contents ran between spool and spool off will be saved in the external file
-  host notepad filename.log # View the file contents
+  host notepad filename.log # View the file contents (Windows)
+  !ls (Linux)
 ```
 
 - Invoke an OS command from within SQL plus:
 ```sh
   host dir # Use host command for Windows
+  !ls # In Linux use !
+  !pwd
 ```
 
 - Set the prompt to display the username and connected database:
