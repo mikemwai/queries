@@ -1,5 +1,5 @@
 select sysdate
-  from dual;
+  from dual; ---- Display the current date and time
 
 --- Dynamic Performance Views --
 select *
