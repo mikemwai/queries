@@ -19,6 +19,16 @@
   show user
 ```
 
+- Retreieve the SPFile being used by the instance:
+```sh
+  show parameter SPFILE
+```
+
+- Retrieve the value of the sga_target from the memory:
+```sh
+  show parameter sga_target # Update to the parameter_value you want to view
+```
+
 - Run a script file:
 ```sh
   sqlplus username/password @list-dept
