@@ -1,0 +1,2 @@
+create pfile = '/home/oracle/PFILEtemp.ora' from spfile; --- Create a PFILE from the existing SPFILE (useful for backup or manual edits)
+create spfile from pfile = '/home/oracle/PFILEtemp.ora'; --- Create an SPFILE from a PFILE (useful for switching back to SPFILE after manual edits)

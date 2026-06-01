@@ -56,6 +56,14 @@ select *
 select *
   from v$sga_dynamic_components; --- Check detailed SGA components information
 
+select value / 1024 / 1024 mb
+  from v$parameter
+ where name = 'sga_target'; --- Check SGA target size in MB from memory
+
+select value / 1024 / 1024 mb
+  from v$spparameter
+ where name = 'sga_target'; --- Check SGA target size in MB from SPFILE
+
 select *
   from v$sql; --- Check SQL execution statistics in shared pool
 
