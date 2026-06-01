@@ -128,6 +128,13 @@ select *
 select *
   from dba_indexes;
 
+select s.name tablespace_name,
+       d.name datafile
+  from v$tablespace s,
+       v$datafile d
+ where s.ts# = d.ts#
+ order by 1; --- Check tablespace and datafile mapping
+
 ---
 
 select *
