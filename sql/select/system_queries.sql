@@ -1,5 +1,5 @@
 select sysdate
-  from dual;
+  from dual; ---- Display the current date and time
 
 --- Dynamic Performance Views --
 select *
@@ -74,6 +74,8 @@ select *
  order by name; --- Check background processes information
 
 ----- Database Components ----
+select * from dba_registry ---- View the db options installed
+  
 ---- 1) System Files -----
 select *
   from v$controlfile; --- Check control file information
@@ -98,6 +100,8 @@ select *
 
 select *
   from v$backup; --- Check backup information
+
+select * from v$block_change_tracking; ---- Check BCT files information
 
 ----- 2) Data Files ----
 ----- Physical Components ----
