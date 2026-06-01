@@ -39,6 +39,12 @@ select sid,
   from v$session
  where username is not null; --- Check for slow SQL queries
 
+select sid,
+       serial#,
+       status
+  from v$session
+ where username = ''; --- Retrieve current session details for a specific user
+
 select *
   from v$managed_standby;
 

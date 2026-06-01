@@ -1,0 +1,1 @@
+alter database open; --- Open the database to allow access to system views
