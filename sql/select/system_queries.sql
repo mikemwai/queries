@@ -188,4 +188,18 @@ select *
   from all_tables;
 
 ------ CDB -----
-select cdb from v$database;
+select cdb from v$database; --- Check if the installed DB is a cdb
+
+select * from dba_registry; --- Retrieve the options installed in the DB 
+
+------ Display the PDBs in the DB ------
+select * from v$pdbs; 
+select * from cdb_pdbs; 
+show pdbs 
+select * from v$containers;
+
+select * from cdb_properties where con_id = 3; ----- Retrieves properties of the pdb(s)
+
+select * from v$containers, cdb_data_files; ----- Retrieve the data files for each container in the DB
+
+select * from cdb_tables where owner='user'; ---- Retrieve tables owned by a specific user
