@@ -202,4 +202,6 @@ select * from cdb_properties where con_id = 3; ----- Retrieves properties of the
 
 select * from v$containers, cdb_data_files; ----- Retrieve the data files for each container in the DB
 
+select * from dba_pdbs, cdb_tables where pdb_id > 2 and pdb_id = con_id and owner='user'; ---- Retrieve all the tables owned by a specific user in all the PDBs
+
 select * from cdb_tables where owner='user'; ---- Retrieve tables owned by a specific user
