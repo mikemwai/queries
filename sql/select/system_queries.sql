@@ -186,3 +186,6 @@ select *
 
 select *
   from all_tables;
+
+------ CDB -----
+select cdb from v$database;
