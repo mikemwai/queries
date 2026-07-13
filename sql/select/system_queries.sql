@@ -181,6 +181,8 @@ select *
 select *
   from dba_users;
 
+select username, account_status from dba_users where = 'user'; ---- Check the status (locked, open, etc) of a specific user account
+
 select *
   from user_tables;
 
